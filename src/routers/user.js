@@ -6,6 +6,9 @@ const sharp = require('sharp')
 const {sendWelcomeEmail,sendCancelationEmail} = require('../emails/account')
 const router = new express.Router()
 
+app.get('/', (req, res) => {
+  res.send(req.body)
+})
 router.get('/user/me',auth,async (req,res)=>{
         res.status(200).send(req.user)
 })
